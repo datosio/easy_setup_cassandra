@@ -11,7 +11,7 @@ Allows setup of both DSE Cassandra and Datastax Community Cassandra versions.
 Requirements
 ------------
 ##### System Libraries:
-* Python 2.7
+* Python 2.6+
 
 ##### Python Libraries: 
 * Paramiko
@@ -21,7 +21,7 @@ Requirements
 Usage
 -----
 ```
-python -m -u <user> -p <pass> -v 2.1.4 -i 10.0.1.10,10.0.1.11
+python setup_cassandra.py -u <user> -p <pass> -v 2.1.4 -i 10.0.1.10,10.0.1.11
 ```
 
 optional arguments:
