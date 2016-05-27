@@ -25,6 +25,7 @@ python -m -u <user> -p <pass> -v 2.1.4 -i 10.0.1.10,10.0.1.11
 ```
 
 optional arguments:
+```
   -h, --help            show this help message and exit
   -u USER, --user USER  OS user of remote cassandra nodes.
   -p PASSWORD, --password PASSWORD
@@ -53,6 +54,7 @@ optional arguments:
   --cass_auth           Add authentication to Cassandra cluster.
   --jmx_auth            Not implemented yet. Set JMX port.
   --jmx_port JMX_PORT   Set JMX port.
+```
 
 Downloads
 ---------
