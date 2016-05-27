@@ -247,7 +247,7 @@ def rpc(ip, command, user=getpass.getuser(), password=None, key=None, timeout=60
     return '', 'Error Connecting.'
 
 
-def scp(mode='put', local_path='.', remote_path='.', ip='127.0.0.1', user=getpass.getuser(), password=None, key=None, timeout=60*60):
+def scp(mode='put', local_path='.', remote_path='.', ip='127.0.0.1', user=getpass.getuser(), password=None, key=None, recursive=True, timeout=60*60):
     """
 
     :param mode:
@@ -270,10 +270,10 @@ def scp(mode='put', local_path='.', remote_path='.', ip='127.0.0.1', user=getpas
     with SCPClient(ssh.get_transport()) as scp:
         if mode == 'put':
             print('[SCP PUT] %s to <%s>:%s' % (local_path, ip, remote_path))
-            scp.put(files=local_path, remote_path=remote_path, recursive=True)
+            scp.put(files=local_path, remote_path=remote_path, recursive=recursive)
         else:
             print("[SCP GET] <%s>:%s to %s" % (ip, remote_path, local_path))
-            scp.get(local_path=local_path, remote_path=remote_path, recursive=True)
+            scp.get(local_path=local_path, remote_path=remote_path, recursive=recursive)
 
     ssh.close()
 
